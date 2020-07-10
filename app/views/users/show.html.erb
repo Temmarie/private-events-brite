@@ -1,4 +1,13 @@
 <p id="notice"><%= notice %></p>
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
 
 
 <% if @user.events.any? %>
@@ -11,16 +20,22 @@
 		<h3>No Events Found</h3>
 	<% end %>
 
+  <% if @user.attended_events.any? %>
+	<h2>Upcoming Events</h2> 
+	<ul class="media-list">
+		<%= render @upcoming_events %>
+	</ul>
+<% else %>
+	<h2>No Upcoming Events</h2>
+<% end %>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+<% if @events.past.any? %>
+	<ul class="media-list">
+		<%= render @events.past %>
+	</ul>
+<% end %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
