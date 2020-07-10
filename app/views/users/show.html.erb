@@ -1,6 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+
+<% if @user.events.any? %>
+		<h3>Submitted (<%= @user.events.count %>) events</h3>
+		<ul class="media-list">
+			<%= render @events %>
+		</ul>
+		<%= will_paginate @events %>
+	<% else %>
+		<h3>No Events Found</h3>
+	<% end %>
+
+
+<!--<p>
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
@@ -12,3 +24,4 @@
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+-->
