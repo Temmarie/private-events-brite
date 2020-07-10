@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :events
-  root 'home#index'
+  root 'events#index'
   
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
