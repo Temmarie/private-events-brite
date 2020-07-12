@@ -27,5 +27,25 @@
 </table>
 
 <br>
+<h2>Upcoming Events</h2>
+<% if @events.upcoming.any? %>
+	<ul class="media-list">
+		<%= render @events.upcoming %>
+	</ul>
+	<%= will_paginate @events.upcoming %>
+<% else %>
+	<h3>Events (0)</h3>
+	<%= link_to new_event_path, class: 'btn btn-success' do %>
+		Add Event <i class="fa fa-plus-circle"></i>
+	<% end %>
+<% end %>
+
+<h2>Past Events</h2>
+<% if @events.past.any? %>
+	<ul class="media-list">
+		<%= render @events.past %>
+	</ul>
+	<%= will_paginate @events.past %>
+<% end %>
 
 <%= link_to 'New Event', new_event_path %>
