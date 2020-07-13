@@ -13,7 +13,7 @@ class User < ApplicationRecord
     attended_events.upcoming
   end
 
-  def previous_events
+  def past_events
     attended_events.past
   end
 
