@@ -32,7 +32,7 @@
 	<ul class="media-list">
 		<%= render @events.upcoming %>
 	</ul>
-	<%= will_paginate @events.upcoming %>
+
 <% else %>
 	<h3>Events (0)</h3>
 	<%= link_to new_event_path, class: 'btn btn-success' do %>
@@ -45,7 +45,6 @@
 	<ul class="media-list">
 		<%= render @events.past %>
 	</ul>
-	<%= will_paginate @events.past %>
 <% end %>
 
 <%= link_to 'New Event', new_event_path %>
