@@ -29,12 +29,6 @@
 	<h2>No Upcoming Events</h2>
 <% end %>
 
-<% if @events.past.any? %>
-	<ul class="media-list">
-		<%= render @events.past %>
-	</ul>
-<% end %>
-
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
