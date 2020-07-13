@@ -3,7 +3,7 @@
 <% if @event.attendees.any? %>
     <% @event.attendees.each do |attendee| %>
         <span class="attendee">
-            <%= attendee.username %>
+            <%= attendee.name %>
         </span> <br/>
     <% end %>
 <% else %>

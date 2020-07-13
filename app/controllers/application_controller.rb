@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   include SessionsHelper
   helper_method :current_user
-    helper_method :logged_in?
-
+  helper_method :logged_in?
 
   def current_user
     if session[:user_id]
@@ -12,5 +13,17 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  private
 
+  # Before filters
+
+  # Confirms a logged-in user.
+  def logged_in_user
+    unless logged_in?
+      # Calls store location in app/helpers/sessions_helper.rb
+      store_location
+      flash[:danger] = 'Please log in.'
+      redirect_to login_url
+    end
+  end
 end
