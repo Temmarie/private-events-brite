@@ -1,9 +1,11 @@
 <div>
 <% if logged_in? && current_user%>
   <%= link_to 'Sign Out', logout_path, method: :delete %>
+
 <% else %>
   <%= link_to 'Sign Up', signup_path %>
   <%= link_to 'Sign in', login_path %>
+  <%= link_to 'Events', events_path %>
 <% end %>
 
 </div>
