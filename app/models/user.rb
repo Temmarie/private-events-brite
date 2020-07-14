@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :event_attendees,  foreign_key: :attendee_id
   has_many :attended_events, through: :event_attendees
 
+  validates :name, presence: true, length: { minimum: 4, maximum: 20 }
+
   validates :email, presence: true, uniqueness: true
 
   def upcoming_events
