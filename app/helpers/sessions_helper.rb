@@ -2,8 +2,8 @@ module SessionsHelper
   # Define the method log_in because we need to use the same login
   # technique in a couple of places
   def log_in(user)
-    # Place a TEMPORARY session cookie on the user’s browser containing an
-    # encrypted version of the user’s id, which allows us to retrieve
+    # Place a TEMPORARY session cookie on the users browser containing an
+    # encrypted version of the users id, which allows us to retrieve
     # the id on subsequent pages using session[:user_id]
     # This temporary cookie created by the session method expires
     # immediately when the browser is closed.

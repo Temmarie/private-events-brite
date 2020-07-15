@@ -16,8 +16,10 @@ class ApplicationController < ActionController::Base
   # Before filters
 
   # Confirms a logged-in user.
+  # disable style/guard
   def logged_in_user
     unless logged_in?
+
       # Calls store location in app/helpers/sessions_helper.rb
       store_location
       flash[:danger] = 'Please log in.'
