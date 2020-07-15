@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class EventAttendeesController < ApplicationController
   def create
     @event = Event.find(params[:event_attendee][:attended_event_id])

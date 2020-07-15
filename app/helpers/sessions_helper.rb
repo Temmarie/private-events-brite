@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module SessionsHelper
   # Define the method log_in because we need to use the same login
   # technique in a couple of places

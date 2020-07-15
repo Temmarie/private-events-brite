@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
   before_action :logged_in_user, only: %i[new create edit update destroy]
