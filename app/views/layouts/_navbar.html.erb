@@ -1,12 +1,16 @@
-<div>
+<div class = "home">
+</div>
+
+<div class = "navbar">
 <% if logged_in? && current_user%>
   <%= link_to 'Sign Out', logout_path, method: :delete %>
-
+  <%= link_to 'Events', events_path %>
+    <%= link_to 'Users', users_path %>
 <% else %>
   <%= link_to 'Sign Up', signup_path %>
   <%= link_to 'Sign in', login_path %>
-  <%= link_to 'Events', events_path %>
+
 <% end %>
 
-</div>
+</div> 
 
