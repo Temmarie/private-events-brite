@@ -35,15 +35,12 @@ justify-content: space-evenly;
 }
 
 .container {
-
+display: flex;
+flex-direction: column;
 }
 
 .events {
-  background-color: rgb(119, 196, 241);
-  display:grid;
-  grid-template-columns: repeat(3, 12px);
-  grid-template-rows: repeat(3, auto);
-  grid-gap: 6px;
+ 
 }
 
 .header {
