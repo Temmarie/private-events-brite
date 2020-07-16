@@ -33,3 +33,30 @@ justify-content: space-evenly;
   text-decoration: underline;
   background-color: pink;
 }
+
+.container {
+
+}
+
+.events {
+  background-color: rgb(119, 196, 241);
+  display:grid;
+  grid-template-columns: repeat(3, 12px);
+  grid-template-rows: repeat(3, auto);
+  grid-gap: 6px;
+}
+
+.header {
+font-size: 14px;
+font-weight: 600;
+}
+
+.links {
+  color: grey;
+}
+
+a:hover {
+  color: rgb(19, 8, 165);
+  text-decoration: underline;
+  background-color:rgb(119, 196, 241);
+}

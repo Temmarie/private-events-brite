@@ -4,27 +4,34 @@
 
 
 <br>
+
+<div class = "container">
 <h2>Upcoming events</h2>
+<div class = "events">
 <% @events.upcoming.each do |event|%>
-    <p> Event: <%= event.title%></p>
-    <p> Description: <%= event.description%></p>
-    <p> Date: <%= event.date%></p><br>
-    <div>
+    <p class ="header"> Event: <%= event.title%></p>
+    <p class ="header"> Description: <%= event.description%></p>
+    <p class ="header"> Date: <%= event.date%></p><br>
+    <div class = "links">
         <%= link_to 'Show', event %>
         <%= link_to 'Edit', edit_event_path(event) %>
         <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
 <% end %>
+</div>
 
 <h2>Past events</h2>
+<div class = "events">
 <% @events.past.each do |event|%>
     <p> Event: <%= event.title%></p>
     <p> Description: <%= event.description%></p>
     <p> Date: <%= event.date%></p><br> 
-    <div>
+    <div class = "links">
         <%= link_to 'Show', event %>
         <%= link_to 'Edit', edit_event_path(event) %>
         <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
 <% end %>
+</div>
+</div>
 <%= link_to 'New Event', new_event_path %>
