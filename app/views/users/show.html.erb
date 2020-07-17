@@ -5,12 +5,16 @@
   <%= @user.name %>
 </p>
 
-<!--<% if @user.events.any? %>
-		<h3>Submitted (<%= @user.events.count %>) events</h3>
-      <p> Event: <%= event.title%></p>
-      <p> Description: <%= event.description%></p>
-      <p> Date: <%= event.date%></p><br> 
-<% end %>-->
+	<div>
+		<h1>My Events</h1>
+		<% if @user.events.any? %>
+			<ul>
+				<%= render @events %>
+			</ul>
+		<% else %>
+			<h3>No Events Found</h3>
+		<% end %>
+	</div>
 
   <% if @user.attended_events.any? %>
 	<h2>Upcoming Events</h2> 
