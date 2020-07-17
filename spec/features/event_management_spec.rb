@@ -26,13 +26,20 @@ RSpec.feature 'Event management', type: :feature do
     expect(page).to have_content 'Events'
 
   end
-
   scenario 'create a new event' do
+    visit login_url
+    fill_in 'Email', with: 'gideon@email.com'
+    fill_in 'Password', with: 'gideon'
+    click_on 'Login'
+    visit events_url
+    expect(page).to have_content 'Upcoming events'
+    expect(page).to have_content 'Past events'
+    expect(page).to have_content 'Events'
+
     visit new_event_url
-    fill_in 'Title', with: 'Minneapolis'
+    fill_in 'event[title]', with: 'Minneapolis'
     fill_in 'Description', with: 'Madonna is already gone, bye bye mama'
     click_button 'Create Event'
-    visit root_path
     expect(page).to have_content('Minneapolis')
     expect(page).to have_content('Madonna is already gone, bye bye mama')
   end
