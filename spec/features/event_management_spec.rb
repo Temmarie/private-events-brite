@@ -37,13 +37,30 @@ RSpec.feature 'Event management', type: :feature do
     expect(page).to have_content 'Events'
 
     visit new_event_url
-    fill_in 'event[title]', with: 'Minneapolis'
-    fill_in 'Description', with: 'Madonna is already gone, bye bye mama'
+    fill_in 'Title', with: 'Lunar Moon'
+    fill_in 'Description', with: 'Big beautiful blue moon'
     click_button 'Create Event'
-    expect(page).to have_content('Minneapolis')
-    expect(page).to have_content('Madonna is already gone, bye bye mama')
+    expect(page).to have_content('Lunar Moon')
+    expect(page).to have_content('Big beautiful blue moon')
+
   end
 
+  scenario 'does not create an event with invalid inputs' do
+    visit login_url
+    fill_in 'Email', with: 'gideon@email.com'
+    fill_in 'Password', with: 'gideon'
+    click_on 'Login'
+    visit events_url
 
+    visit new_event_url
+    fill_in 'Title', with: ' '
+    fill_in 'Description', with: ''
+    click_button 'Create Event'
+    expect(page).to have_content("Title can't be blank")
+    expect(page).to have_content("Title is too short (minimum is 5 characters)")
+    expect(page).to have_content("Description can't be blank")
+    expect(page).to have_content('Description is too short (minimum is 10 characters)')
+
+  end
 
 end
