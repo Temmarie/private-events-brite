@@ -13,7 +13,6 @@ files:
       - "Guardfile"
       - "Rakefile"
       - "README.md"
-      - "spec/*"
       - "node_modules/**/*"
 
 # PLEASE DO NOT enable auto fixing options

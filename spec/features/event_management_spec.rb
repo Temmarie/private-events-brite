@@ -11,7 +11,6 @@ RSpec.feature 'Event management', type: :feature do
     click_on 'Create User'
   end
 
-
   scenario 'displays a successful flash message' do
     expect(page).to have_content 'User was successfully created'
   end
@@ -24,7 +23,6 @@ RSpec.feature 'Event management', type: :feature do
     expect(page).to have_content 'Upcoming events'
     expect(page).to have_content 'Past events'
     expect(page).to have_content 'Events'
-
   end
   scenario 'create a new event' do
     visit login_url
@@ -42,7 +40,6 @@ RSpec.feature 'Event management', type: :feature do
     click_button 'Create Event'
     expect(page).to have_content('Lunar Moon')
     expect(page).to have_content('Big beautiful blue moon')
-
   end
 
   scenario 'does not create an event with invalid inputs' do
@@ -57,10 +54,8 @@ RSpec.feature 'Event management', type: :feature do
     fill_in 'Description', with: ''
     click_button 'Create Event'
     expect(page).to have_content("Title can't be blank")
-    expect(page).to have_content("Title is too short (minimum is 5 characters)")
+    expect(page).to have_content('Title is too short (minimum is 5 characters)')
     expect(page).to have_content("Description can't be blank")
     expect(page).to have_content('Description is too short (minimum is 10 characters)')
-
   end
-
 end
