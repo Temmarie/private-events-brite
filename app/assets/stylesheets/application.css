@@ -39,9 +39,14 @@ display: flex;
 flex-direction: column;
 }
 
-.events {
- 
+.headings {
+ background-color: rgb(236, 214, 214);
+ padding: 0.2em;
+ margin-right: 50%;
+ display: flex;
+ flex-direction: row;
 }
+
 
 .header {
 font-size: 14px;
