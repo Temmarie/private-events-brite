@@ -1,27 +1,23 @@
 <p id="notice"><%= notice %></p>
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
 
-<p>
+<h2>
   <strong>Name:</strong>
   <%= @user.name %>
-</p>
+</h2>
 
-
-<% if @user.events.any? %>
-		<h3>Submitted (<%= @user.events.count %>) events</h3>
-		<ul class="media-list">
-			<%= render @events %>
-		</ul>
-		<%= will_paginate @events %>
-	<% else %>
-		<h3>No Events Found</h3>
-	<% end %>
+	<div>
+		<h2 class ="headings">My Events</h2>
+		<% if @user.events.any? %>
+			<ul>
+				<%= render @events %>
+			</ul>
+		<% else %>
+			<h3>No Events Found</h3>
+		<% end %>
+	</div>
 
   <% if @user.attended_events.any? %>
-	<h2>Upcoming Events</h2> 
+	<h2 class ="headings">Upcoming Events</h2> 
 	<ul class="media-list">
 		<%= render @upcoming_events %>
 	</ul>
@@ -30,7 +26,7 @@
 <% end %>
 
 <% if @past_events.any? %>
-	<h2>Past Events</h2> 
+	<h2 class ="headings">Past Events</h2> 
 	<ul class="media-list">
 		<%= render @past_events %>
 	</ul>

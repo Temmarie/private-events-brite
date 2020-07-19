@@ -39,4 +39,4 @@ Linkedin: Grace Tife Ekunola
 Feel free to check the issues page.
 
 ## Show your support
-Give a ⭐️ if you like this project please!
+Give a ⭐️ if you like this projects!

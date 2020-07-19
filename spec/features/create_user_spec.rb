@@ -36,7 +36,7 @@ feature 'The signin process:' do
   feature 'signing in a user' do
     before(:each) do
       visit login_url
-      fill_in 'Password', with: 'Tammy'
+      fill_in 'Password', with: 'Tamara'
       fill_in 'Email', with: 'tam@gmail.com'
       click_button 'Login'
     end
@@ -45,8 +45,8 @@ feature 'The signin process:' do
       expect(page).to have_content 'Events'
     end
 
-    scenario 'shows events on the homepage after signing in' do
-      expect(page).to have_content 'Events'
+    scenario 'shows flash message on page after signin' do
+      expect(page).to have_content 'Logged in!'
     end
   end
 end

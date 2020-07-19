@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   def show
     @upcoming_events = @user.upcoming_events
     @past_events = @user.past_events
+    @events = @user.events
   end
 
   # GET /users/new
